@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentiment Analysis</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50px;
+        }
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .result {
+            font-size: 1.5em;
+            font-weight: bold;
+            padding: 10px;
+            color: white;
+            margin-top: 20px;
+            border-radius: 10px;
+        }
+        button{
+            height: 30px;
+            border-radius: 10px;
+            background-color: #16ffbf;
+        }
+        input{
+            height: 25px;
+            border-radius: 3px;
+        }
+        .green {
+            background-color: green;
+        }
+        .red {
+            background-color: red;
+        }
+        .yellow {
+            background-color: yellow;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Sentiment Analysis</h1>
+        <form method="POST">
+            <input type="text" name="text" placeholder="Enter text" required>
+            <button type="submit">Submit</button>
+        </form>
+
+        {% if sentiment %}
+            <div class="result {{ color }}">
+                {{ sentiment }}
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
